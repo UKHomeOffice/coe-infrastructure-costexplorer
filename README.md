@@ -35,7 +35,7 @@ example 1 : total
  
 example 2 : per account
 
-	$ aws ce  --profile <profilename>  --region=us-east-1 get-cost-and-usage --time-period file://date.json --granularity MONTHLY --metrics UnblendedCost --group-by file://groupby.json
+	$ aws ce  --profile <profilename>  --region=us-east-1 get-cost-and-usage --time-period file://date.json --granularity MONTHLY --metrics UnblendedCost --group-by file://filter.jso
 	
 
 json files
@@ -56,6 +56,14 @@ date.json
  	 "End": "2018-02-17"
 	}
 
+filter.json
+
+	{
+		"Dimensions": {
+			"Key": "LINKED_ACCOUNT",
+			"Values": ["<AccNo>", "<AccNo>","<AccNo>"]
+		}
+	}
 
 
 
